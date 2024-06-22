@@ -1,0 +1,77 @@
+<html>
+  <body>
+    <h1>Coding projects that I wish were done but I haven't had time for</h1>
+    <hr />
+    <section>
+      <h2>Make org.postgresql:postgresql a full module.</h2>
+      <section>
+        <h3>Why</h3>
+        <p>
+          <a href="https://github.com/pgjdbc/pgjdbc">
+            The Postgres JDBC driver for Java</a
+          >
+          has an Automatic-Module declaration. This means it has a stable module
+          name, but it is still lacking a full module-info. Without a full
+          module-info the driver cannot be used with jlink. Considering Postgres
+          is both a very popular database and my personal favorite, this stinks.
+          Especially since I think there would be
+          <a href="https://mccue.dev/pages/5-29-24-module-compilation"
+            >non-trivial benefits</a
+          >
+          if a significant portion of libraries worked fully with the module
+          system tooling.
+        </p>
+      </section>
+      <section>
+        <h3>Notes</h3>
+        <ul>
+          <li>
+            The gradle build for the postgres library is fickle and from what I
+            tried, annoying to configure to do this.
+          </li>
+          <li>
+            Postgres is shading in a few libraries and that feels like it could
+            be annoying... somehow
+          </li>
+          <li>
+            Its dependency on checker-qual should also be bumped to the newest
+            version.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Desired Results</h3>
+        <ul>
+          <li>
+            The newest version of
+            <a
+              href="https://search.maven.org/artifact/org.postgresql/postgresql"
+              >org.postgresql:postgresql</a
+            >
+            has a full module descriptor and is fully compatible with jlink.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Reward</h3>
+        <p>
+          If you can show that your efforts directly led to the desired result
+          you may email me at ethan@mccue.dev and request one of
+        </p>
+        <ul>
+          <li>
+            A pizza or spiritually equivalent food delivered to an address of
+            your choosing.
+          </li>
+          <li>A Venmo for an equivalent amount.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>
+          Status:
+          <p style="color: red">No Takers</p>
+        </h3>
+      </section>
+    </section>
+  </body>
+</html>
