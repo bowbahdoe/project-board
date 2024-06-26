@@ -119,7 +119,9 @@
             I think the concept of an "embeddable module" is good, but in an
             ideal world library authors would need to opt-in to that. Doing such
             a transform is not, in principle, robust. Especially with reflection
-            of class names in string literals. Maybe a
+            of class names in string literals. Maybe requiring a flag that makes
+            a user aware that the library hasn't opted in + a module level
+            annotation they could add to opt-in? Perhaps not important.
           </li>
           <li>
             I'm not particuarly interested in reducing the amount of code
