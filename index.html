@@ -73,5 +73,90 @@
         </h3>
       </section>
     </section>
+    <section>
+      <h2>
+        A CLI that can do everything the maven shade plugin can, but is module
+        aware.
+      </h2>
+      <section>
+        <h3>Why</h3>
+        <p>
+          Shading a library - including its contents inside of your own JAR - is
+          a good strategy to eliminate a user-facing dependency.
+          <a href="https://github.com/apache/maven-shade-plugin">
+            The Maven Shade Plugin</a
+          >
+          is what Maven users use for this. Gradle has similar plugins as well.
+          But to use any of that you also need to be using their respective
+          build tools. There are CLI tools like
+          <a href="https://github.com/shevek/jarjar">Jar Jar Links</a> and
+          <a href="https://github.com/Guardsquare/proguard">Pro Guard</a>.
+        </p>
+
+        <p>
+          What I feel is missing is something that performs this same task but
+          is aware of the module system. For all of the options above you need
+          to specially configure them to not get a faulty module info in the
+          end. This is part of why there are so many
+          <a
+            href="https://github.com/sormuras/modules/blob/main/doc/suspicious/impostor-modules.md"
+            >"Imposter Modules"</a
+          >
+          on Maven Central.
+        </p>
+
+        <p>
+          So what I would want is a CLI tool that can "embed" a module into your
+          own, including fixing up service provider usages. Ideally a Maven +
+          Gradle plugin as well but I am personally less interested in that.
+        </p>
+      </section>
+      <section>
+        <h3>Notes</h3>
+        <ul>
+          <li>
+            I think the concept of an "embeddable module" is good, but in an
+            ideal world library authors would need to opt-in to that. Doing such
+            a transform is not, in principle, robust. Especially with reflection
+            of class names in string literals. Maybe a
+          </li>
+          <li>
+            I'm not particuarly interested in reducing the amount of code
+            embedded or obfusication a'la ProGuard.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Desired Results</h3>
+        <ul>
+          <li>
+            There is a CLI tool available which can embed a module into another
+            module. Ideally available on a package manager like
+            <a href="https://sdkman.io/">SDKMan</a>,
+            <a href="https://brew.sh/">Homebrew</a>, etc.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Reward</h3>
+        <p>
+          If you can show that your efforts directly led to the desired result
+          you may email me at ethan@mccue.dev and request one of
+        </p>
+        <ul>
+          <li>
+            A pizza or spiritually equivalent food delivered to an address of
+            your choosing.
+          </li>
+          <li>A Venmo for an equivalent amount.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>
+          Status:
+          <p style="color: red">No Takers</p>
+        </h3>
+      </section>
+    </section>
   </body>
 </html>
